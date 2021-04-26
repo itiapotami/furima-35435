@@ -19,7 +19,7 @@
 - has_many :items
 - has_many :comments
 - has_many  :purchases
-- has_one  :address
+
 
 ## items テーブル
 
@@ -29,6 +29,7 @@
 | description    | text       | null: false          |
 | category_id    | integer    | null: false          |
 | status_id      | integer    | null :false          |
+| fee_id         | integer    | null :false          |
 | prefecture_id  | integer    | null :false          |
 | days_id        | integer    | null :false          |
 | price          | integer    | null :false          |
