@@ -13,7 +13,7 @@
                 <mxCell id="3" value="nickname                           birthday" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;fontStyle=1" parent="2" vertex="1">
                     <mxGeometry y="26" width="260" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="4" value="email&#10;&#10;passworad&#10;&#10; last_name&#10;&#10;first_name&#10;&#10;last_kana&#10;&#10;first_kana&#10;&#10;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;fontStyle=1" parent="2" vertex="1">
+                <mxCell id="4" value="email&#10;&#10;encrypted_passworad&#10;&#10; last_name&#10;&#10;first_name&#10;&#10;last_kana&#10;&#10;first_kana&#10;&#10;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;fontStyle=1" parent="2" vertex="1">
                     <mxGeometry y="56" width="260" height="184" as="geometry"/>
                 </mxCell>
                 <mxCell id="40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1.008;entryY=0.233;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=ERone;startFill=0;startSize=12;endArrow=ERmany;endFill=0;endSize=12;strokeWidth=3;" parent="1" source="8" target="14" edge="1">
@@ -58,7 +58,7 @@
                 <mxCell id="42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1.005;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=ERone;startFill=0;startSize=12;endArrow=ERone;endFill=0;endSize=12;strokeWidth=3;" parent="1" source="19" target="10" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;startArrow=ERone;startFill=0;startSize=12;endArrow=ERone;endFill=0;endSize=12;strokeWidth=3;" parent="1" source="18" target="4" edge="1">
+                <mxCell id="43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;startArrow=ERmany;startFill=0;startSize=12;endArrow=ERone;endFill=0;endSize=12;strokeWidth=3;" parent="1" source="18" target="4" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="120" y="440" as="targetPoint"/>
                         <Array as="points">
@@ -86,13 +86,8 @@
                 <mxCell id="47" value="city&#10;&#10;house_number&#10;&#10;building_name&#10;&#10;phone_number" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="44" vertex="1">
                     <mxGeometry y="86" width="266" height="114" as="geometry"/>
                 </mxCell>
-                <mxCell id="49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=ERone;startFill=0;startSize=12;endArrow=ERone;endFill=0;endSize=12;strokeWidth=3;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="47" target="3" edge="1">
-                    <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="50" y="270" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="53" value="has_many&amp;nbsp; items&lt;br&gt;has_many comments&lt;br&gt;has_one&amp;nbsp; &amp;nbsp; purchase&lt;br&gt;has_one&amp;nbsp; &amp;nbsp;address" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-                    <mxGeometry x="60" y="150" width="120" height="80" as="geometry"/>
+                <mxCell id="53" value="has_many&amp;nbsp; items&lt;br&gt;has_many comments&lt;br&gt;has_many&amp;nbsp; &amp;nbsp; purchase&lt;br&gt;has_one&amp;nbsp; &amp;nbsp;address" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="150" width="140" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="54" value="belongs_to user&lt;br&gt;has_many comments&lt;br&gt;has_one&amp;nbsp; &amp;nbsp; purchase" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
                     <mxGeometry x="690" y="180" width="130" height="40" as="geometry"/>
@@ -103,7 +98,7 @@
                 <mxCell id="56" value="belongs_to&amp;nbsp; user&lt;br&gt;belongs_to&amp;nbsp; item" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
                     <mxGeometry x="430" width="100" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="57" value="has_one user&lt;br&gt;has_one purchase" style="whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+                <mxCell id="57" value="belongs_to&amp;nbsp; purchase" style="whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
                     <mxGeometry x="220" y="970" width="120" height="40" as="geometry"/>
                 </mxCell>
             </root>
