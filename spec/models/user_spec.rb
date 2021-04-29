@@ -79,17 +79,25 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("First kana can't be blank", "First kana is invalid. Input full-width katakana characters.")
       end
-      it 'last_nameとfirst_nameが全角でないと登録できない' do
+      it 'last_nameが全角でないと登録できない' do
         @user.last_name = 'aaaaaaa'
-        @user.first_name = 'aaaaaa'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Last name is invalid. Input full-width characters.", "First name is invalid. Input full-width characters.")
+        expect(@user.errors.full_messages).to include("Last name is invalid. Input full-width characters.")
+      end
+      it 'first_nameが全角でないと登録できない' do
+        @user.first_name = 'aaaaaaaaa'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("First name is invalid. Input full-width characters.")
       end
       it 'last_kanaとfirst_kanaが全角カナでないと登録できない' do
         @user.last_kana = '菅原'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Last kana is invalid. Input full-width katakana characters.")
+      end
+      it 'first_kanaが全角でないと登録できない' do
         @user.first_kana = '文太'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Last kana is invalid. Input full-width katakana characters.", "First kana is invalid. Input full-width katakana characters.")
+        expect(@user.errors.full_messages).to include("First kana is invalid. Input full-width katakana characters.")
       end
       it 'birthdayが空では登録できない' do
         @user.birthday = ''
