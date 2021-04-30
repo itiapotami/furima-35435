@@ -31,7 +31,7 @@
 | status_id      | integer    | null :false          |
 | fee_id         | integer    | null :false          |
 | prefecture_id  | integer    | null :false          |
-| days_id        | integer    | null :false          |
+| day_id        | integer    | null :false          |
 | price          | integer    | null :false          |
 | user           | references | foreign_key :true    |
 
