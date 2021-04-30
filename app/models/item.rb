@@ -1,17 +1,9 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
-
-  extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :status
-
-  extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :fee
-
-  extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture
-
-  extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :day
 
   belongs_to       :user
