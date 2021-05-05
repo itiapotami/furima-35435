@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+  before_action :item_get, only: [:show, :edit, :update]
+  before_action :match_user, only: [:edit, :update]
 
   def index
     @items = Item.order(id: 'DESC')
@@ -19,7 +21,18 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])   
+  end
+
+  def edit
+  end
+
+  def update
+      @item.update(item_params)
+      if @item.save
+        redirect_to item_path(@item)
+      else
+        render :edit 
+      end
   end
 
   private
@@ -27,5 +40,15 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:image, :item_name, :description, :category_id, :status_id, :fee_id, :prefecture_id, :day_id,
                                  :price).merge(user_id: current_user.id)
+  end
+
+  def item_get
+    @item = Item.find(params[:id])
+  end
+
+  def match_user
+    if current_user.id != @item.user_id
+      redirect_to root_path
+    end
   end
 end
