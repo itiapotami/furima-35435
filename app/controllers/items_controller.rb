@@ -21,6 +21,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    
   end
 
   def edit
@@ -55,7 +56,7 @@ class ItemsController < ApplicationController
   end
 
   def match_user
-    if current_user.id != @item.user_id
+    if current_user.id != @item.user_id || @item.purchase.present?
       redirect_to root_path
     end
   end
