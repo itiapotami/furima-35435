@@ -55,6 +55,13 @@ RSpec.describe PurchaseAddress, type: :model do
         expect(@purchase_address.errors.full_messages).to include("Phone number input only number")
       end
 
+      it "phone_numberは英数字混合では購入できない" do
+        @purchase_address.phone_number = "090ninana87"
+        @purchase_address.valid?
+        expect(@purchase_address.errors.full_messages).to include("Phone number input only number")
+        
+      end
+
       it "tokenが空では購入できない" do
         @purchase_address.token = ""
         @purchase_address.valid?
