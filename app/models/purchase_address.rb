@@ -9,7 +9,7 @@ class PurchaseAddress
     validates :prefecture_id,  numericality: { other_than: 1 }
     validates :city
     validates :house_number
-    validates :phone_number,  format: {with: /\A0[5789]0[-]?\d{4}[-]?\d{4}\z/, message: "input only number"}
+    validates :phone_number,  format: {with: /\A\d{10,11}\z/, message: "電話番号は11桁以内の数値のみ保存可能なこと"}
     validates :token
   end
 
