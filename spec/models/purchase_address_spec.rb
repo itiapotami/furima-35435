@@ -47,18 +47,18 @@ RSpec.describe PurchaseAddress, type: :model do
       it "phone_numberが空では購入できない" do
         @purchase_address.phone_number = ""
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include("Phone number can't be blank", "Phone number input only number")
+        expect(@purchase_address.errors.full_messages).to include("Phone number 電話番号は11桁以内の数値のみ保存可能なこと")
       end
       it "phone_numberは数字で11桁でないと購入できない" do
         @purchase_address.phone_number = "090274420854"
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include("Phone number input only number")
+        expect(@purchase_address.errors.full_messages).to include("Phone number 電話番号は11桁以内の数値のみ保存可能なこと")
       end
 
       it "phone_numberは英数字混合では購入できない" do
         @purchase_address.phone_number = "090ninana87"
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include("Phone number input only number")
+        expect(@purchase_address.errors.full_messages).to include("Phone number 電話番号は11桁以内の数値のみ保存可能なこと")
         
       end
 
