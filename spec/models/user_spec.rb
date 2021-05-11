@@ -30,6 +30,8 @@ RSpec.describe User, type: :model do
       it 'passwordが空では登録できない' do
         @user.password = ''
         @user.valid?
+        binding.pry
+        
         expect(@user.errors.full_messages).to include("Password can't be blank")
       end
       it 'passwordが存在してもpassword_confirmationが空では登録できない' do
@@ -47,8 +49,6 @@ RSpec.describe User, type: :model do
       it 'passwordが半角英字のみだと登録できない' do
         @user.password = 'aaaaaaaaaaaa'
         @user.valid?
-        binding.pry
-        
         expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
       end
       it 'passwordが半角数字のみだと登録できない' do
